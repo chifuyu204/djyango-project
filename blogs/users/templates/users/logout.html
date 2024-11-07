@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+
+    <h1>Are you sure you want to log out?</h1>
+    <form method="post" action="{% url 'logout_confirm' %}">  <!-- Change this line -->
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    <a href="{%url "blog-home"%}">Cancel</a>  <!-- Adjust this to redirect to the appropriate home page -->
+
+    {% endblock content %}
